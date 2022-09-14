@@ -1,0 +1,7 @@
+public String getAccountsInJSONFormat(List<Account> accounts){
+  // code here
+  if (accounts == null) {
+      return 'null';
+  }
+  return JSON.serialize(accounts);
+}
