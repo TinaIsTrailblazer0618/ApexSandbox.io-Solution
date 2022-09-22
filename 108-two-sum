@@ -1,8 +1,8 @@
 public static List<Integer> twoSum(List<Integer> nums, Integer target) {
     List<Integer> returnIndexes;
     Map<Integer, Integer> complementMap = new Map<Integer, Integer>();
-    for (Integer i; i < nums.size(); i++) {
-        Integer complementNum = target - nums[i]; // 8
+    for (Integer i = 0; i < nums.size(); i++) {
+        Integer complementNum = target - nums[i];
         if (complementMap.containsKey(complementNum)) {
             returnIndexes = new List<Integer>{
                 complementMap.get(complementNum),
