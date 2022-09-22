@@ -1,0 +1,16 @@
+public void validateInsert(List<Opportunity> opportunities){
+    Schema.DescribeFieldResult description = Account.Description.getDescribe();
+    Schema.sObjectField descField = description.getSObjectField();
+
+    for (Opportunity opportunity : opportunities) {
+        if (
+            opportunity.StageName == 'Closed Won' &&
+            (String.isBlank(opportunity.Description))
+        ) {
+            opportunity.addError(
+                descField,
+                'Description should not be empty for Closed Won opportunity.'
+            );
+        }
+    }
+}
