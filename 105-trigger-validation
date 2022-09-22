@@ -1,5 +1,5 @@
 public void validateInsert(List<Opportunity> opportunities){
-    Schema.DescribeFieldResult description = Account.Description.getDescribe();
+    Schema.DescribeFieldResult description = Opportunity.Description.getDescribe();
     Schema.sObjectField descField = description.getSObjectField();
 
     for (Opportunity opportunity : opportunities) {
