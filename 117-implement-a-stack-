@@ -9,7 +9,7 @@ public class Stack {
     
     public Object pop() {
         //implement pop
-        return stackList.remove(stackList?.size() - 1);
+        return stackList?.remove(stackList?.size() - 1);
     }
     
     public Integer size() {
