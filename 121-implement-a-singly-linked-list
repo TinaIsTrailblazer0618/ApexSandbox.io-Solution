@@ -1,22 +1,88 @@
 public class LinkedList{
+    public Node head;
+    public Node tail;
+    public Integer size;
+
+    public LinkedList() {
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
+    }
     
-    public void addToFront(Integer value){}
-    public Integer removeFromFront(){}
-    public void addToTail(Integer value){}
-    public Integer removeFromTail(){}
-    public Integer size(){}    
+    public void addToFront(Integer value){
+        Node newHead = new Node(value);
+        if (this.head == null) {
+            this.head = newHead;
+            this.tail = this.head;
+        } else {
+            newHead.next = this.head;
+            this.head = newHead;
+        }
+        this.size++;
+    }
+
+    public Integer removeFromFront(){
+        if (this.head == null) {
+            return null;
+        }
+        Node remove = this.head;
+        this.head = this.head.next;
+        this.size--;
+        return remove.data;
+    }
+
+    public void addToTail(Integer value){
+        Node newNode = new Node(value);
+        if (this.head == null) {
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.size++;
+    }
+
+    public Integer removeFromTail(){
+        if (this.head == null) {
+            return null;
+        }
+        if (this.head.next == null) {
+            Node temp = this.head;
+            this.head = null;
+            this.size--;
+            return temp.data;
+        }
+        Node current = this.head;
+        Node newTail;
+        while (current.next != null) {
+            newTail = current;
+            current = current.next;            
+        }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.size--;
+        return current.data;
+    }
+
+    public Integer size(){
+        Integer size = 0;
+        if (this.head == null) {
+            return size;
+        }
+        Node current = this.head;
+        if (current.next != null) {
+            size++;
+        }
+        return size;
+    }    
 }
 
 public class Node{
     Integer data;
     Node next;
 
-    public Node{
-    Integer data;
-    Node next;
-    
-    public Node(Intger data) {
-        this.data = data;
+    public Node(Integer value) {
+        this.data = value;
     }
-}
 }
