@@ -66,15 +66,15 @@ public class LinkedList{
     }
 
     public Integer size(){
-        Integer size = 0;
+        Integer listSize = 0;
         if (this.head == null) {
-            return size;
+            return listSize;
         }
         Node current = this.head;
         if (current.next != null) {
-            size++;
+            listSize++;
         }
-        return size;
+        return listSize;
     }    
 }
 
