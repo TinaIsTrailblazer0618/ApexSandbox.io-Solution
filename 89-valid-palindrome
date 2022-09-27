@@ -1,11 +1,12 @@
 public Boolean isPalindrome(String str){
     String regExp = '[\\W_]';
     String newString = str.toLowerCase().replaceAll(regExp, '');
+    List<String> strList = newString.split('');
     // Declare and initialize the two pointers
     Integer left = 0;
-    Integer right = str.size() - 1;
+    Integer right = strList.size() - 1;
     while (left < right) {
-        if (str[left] != str[right]) {
+        if (strList[left] != strList[right]) {
             return false;
         }
         left++;
