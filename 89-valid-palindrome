@@ -1,6 +1,6 @@
 public Boolean isPalindrome(String str){
     Boolean isPalindrome = false;
-    String regExp = '[\\W_]'
+    String regExp = '[\\W_]';
     String newString = str.toLowerCase().replaceAll(regExp, '');
     if (newString.reverse() = newString) {
         isPalindrome = true;
