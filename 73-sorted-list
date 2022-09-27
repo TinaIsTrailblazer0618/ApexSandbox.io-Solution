@@ -1,0 +1,36 @@
+public boolean isSorted(List<Integer> numbers) {
+    if (numbers.size() < 3) {
+        return true;
+    }
+    // Declare and initialize the two pointers.
+    Integer left = 0;
+    Integer right = numbers.size() - 1;
+    // Ascending order condidtion e.g. 1, 2, 3, 4, 5
+    if (numbers[left] < numbers[right]) {
+        while (left < right) {
+            if (numbers[left + 1] < number[left]) {
+                return false;
+            }
+            left++;
+        }
+    }
+    // Descending order condition e.g. 5, 4, 3, 2, 1
+    if (numbers[left] > numbers[right]) {
+        while (left < right) {
+            if (numbers[left + 1] > numbers[left]) {
+                return false;
+            }
+            left++;
+        }
+    }
+    // Exact same values throughout the list
+    if (numbers[left] == numbers[right]) {
+        while (left < right) {
+            if (numbers[left + 1] != numbers[left]) {
+                return false;
+            }
+            left++;
+        }
+    }
+    return true;
+}
