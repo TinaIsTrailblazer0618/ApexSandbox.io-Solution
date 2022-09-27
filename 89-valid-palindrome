@@ -13,11 +13,4 @@ public Boolean isPalindrome(String str){
         right--;
     }
     return true;
-
-
-    // if (newString.reverse() == newString) {
-    //     isPalindrome = true;
-    //     return isPalindrome;
-    // }
-    // return isPalindrome;
 }
