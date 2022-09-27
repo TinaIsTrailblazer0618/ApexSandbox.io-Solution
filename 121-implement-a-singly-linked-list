@@ -73,7 +73,7 @@ public class LinkedList{
         }
         listSize = 1;
         Node current = this.head;
-        if (current.next != null) {
+        while (current.next != null) {
             listSize++;
         }
         return listSize;
