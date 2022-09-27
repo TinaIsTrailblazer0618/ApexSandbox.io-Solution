@@ -8,7 +8,7 @@ public boolean isSorted(List<Integer> numbers) {
     // Ascending order condidtion e.g. 1, 2, 3, 4, 5
     if (numbers[left] < numbers[right]) {
         while (left < right) {
-            if (numbers[left + 1] < number[left]) {
+            if (numbers[left + 1] < numbers[left]) {
                 return false;
             }
             left++;
