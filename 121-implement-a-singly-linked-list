@@ -54,7 +54,7 @@ public class LinkedList{
             return temp.data;
         }
         Node current = this.head;
-        Node newTail;
+        Node newTail = null;
         while (current.next != null) {
             newTail = current;
             current = current.next;            
