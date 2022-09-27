@@ -1,10 +1,21 @@
 public Boolean isPalindrome(String str){
-    Boolean isPalindrome = false;
     String regExp = '[\\W_]';
     String newString = str.toLowerCase().replaceAll(regExp, '');
-    if (newString.reverse() == newString) {
-        isPalindrome = true;
-        return isPalindrome;
+    // Declare and initialize the two pointers
+    Integer left = 0;
+    Integer right = str.size() - 1;
+    while (left < right) {
+        if (str[left] != str[right]) {
+            return false;
+        }
+        left++;
     }
-    return isPalindrome;
+    return true;
+
+
+    // if (newString.reverse() == newString) {
+    //     isPalindrome = true;
+    //     return isPalindrome;
+    // }
+    // return isPalindrome;
 }
