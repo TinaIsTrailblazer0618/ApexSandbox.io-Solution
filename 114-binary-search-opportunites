@@ -2,7 +2,7 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     Map<Integer, Integer> oppMap = new Map<Integer, Integer>();
     for (Integer i = 0; i < opportunities.size(); i++) {
         Integer oppAmount = Integer.valueOf(opportunities[i].Amount);
-        oppMap.put(opportunities[i].Amount, i);
+        oppMap.put(oppAmount, i);
     }
     if (oppMap.containsKey(target)) {
         return oppMap.get(target);
