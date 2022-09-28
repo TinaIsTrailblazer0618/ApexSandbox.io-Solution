@@ -1,0 +1,27 @@
+public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2){
+    // solution 
+    List<Integer> mergedList = new List<Integer>();
+    Integer i = 0;
+    Intger j = 0;
+    Intger k = 0;
+    while (i < list1.size() && j < list2.size()) {
+        if (list1[i] < list2[j]) {
+            mergedList[k] = list1[i];
+            i++;
+            k++;
+        }
+    } else {
+        mergedList[k] = list2[j];
+        j++;
+        k++;
+    }
+
+    while (i < list1.size()) {
+        mergedList[k++] = list1[i++];
+    }
+
+    while (j < list2.size()) {
+        mergedList[k++] = list2[j++];
+    }
+    return mergedList;
+}
