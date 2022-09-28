@@ -1,7 +1,4 @@
 public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2){
-    List<Integer> list1,
-    List<Integer> list2
-) {
     Integer i = 0;
     Integer j = 0;
     Integer k = 0;
