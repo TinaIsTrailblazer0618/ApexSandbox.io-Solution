@@ -15,7 +15,6 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
         k++;
         }
     }
-
     while (i < list1.size()) {
         mergedList[k++] = list1[i++];
     }
