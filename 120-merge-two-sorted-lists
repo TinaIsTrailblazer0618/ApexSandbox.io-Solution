@@ -10,9 +10,9 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
             i++;
             k++;
         } else {
-        mergedList[k] = list2[j];
-        j++;
-        k++;
+            mergedList[k] = list2[j];
+            j++;
+            k++;
         }
     }
     while (i < list1.size()) {
