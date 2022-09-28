@@ -1,0 +1,10 @@
+public static Integer search(List<Opportunity> opportunities, Integer target){
+    Map<Integer, Integer> oppMap = new Map<Integer, Integer>();
+    for (Integer i = 0; i < opportunities.size(); i++) {
+        oppMap.put(opportunities[i].Amount, i);
+    }
+    if (oppMap.containsKey(target)) {
+        return oppMap.get(target);
+    }
+    return - 1;
+}
