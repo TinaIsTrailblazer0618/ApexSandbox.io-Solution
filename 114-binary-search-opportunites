@@ -1,25 +1,33 @@
 public static Integer search(List<Opportunity> opportunities, Integer target){
-    if (opportunities.isEmpty() || target == null) {
-        return null;
-    }
-
-    // Map<Opportunity, Map<Integer, Integer>> oppMap = 
-    //     new Map<Opportunity, Map<Integer, Integer>>();
-    // Map<Integer, Integer> amountMap = new Map<Integer, Integer>();
+    // This approach will time out. Also need to think about 
+    // how to address duplicate key values, i.e. opp that has the same opp amount.
+    // if (opportunities.isEmpty() || target == null) {
+    //     return null;
+    // }
+    // Map<Integer, Integer> oppMap = new Map<Integer, Integer>();
     // for (Integer i = 0; i < opportunities.size(); i++) {
     //     Integer oppAmount = Integer.valueOf(opportunities[i].Amount);
-    //     amountMap.put(oppAmount, i);
-    //     oppMap.put(opp, amountMap);
+    //     oppMap.put(oppAmount, i);
     // }
+    // if (oppMap.containsKey(target)) {
+    //     return oppMap.get(target);
+    // }
+    // return - 1;
 
-    Map<Integer, Integer> oppMap = new Map<Integer, Integer>();
-    for (Integer i = 0; i < opportunities.size(); i++) {
-        Integer oppAmount = Integer.valueOf(opportunities[i].Amount);
-        oppMap.put(oppAmount, i);
-    }
+    Integer left = 0;
+    Integer right = opportunities.size();
 
-    if (oppMap.containsKey(target)) {
-        return oppMap.get(target);
+    while (left < right) {
+        // find the middle
+        Integer middle = (left + right) / 2;
+        if (Integer.valueOf(opportunities[middle].Amount) == target) {
+            return middle;
+        }
+        if (Integer.valueOf(opportunities[middle].Amount) < target) {
+            left = middle + 1;
+        } else {
+            right = middle - 1;
+        } 
     }
-    return - 1;
+    return -1;
 }
