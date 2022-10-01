@@ -1,0 +1,19 @@
+public boolean isAnagram(String s1, String s2) {
+    //Code here
+    Map<String, Integer> map1 = new Map<String, Integer>();
+    Map<String, Integer> map2 = new Map<String, Integer>();
+    List<String> strList1 = s1.split('');
+    List<String> strList2 = s2.split('');
+    for (String character : strList1) {
+        Integer frequency = s1.countMatches(character);
+        map1.put(character, frequency);
+    }
+    for (String character : strList2) {
+        Integer frequency = s2.countMatches(character);
+        map2.put(character, frequency);
+    }
+    if (map1.equals(map2)) {
+        return true;
+    }
+    return false;
+}
