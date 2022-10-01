@@ -1,0 +1,15 @@
+public Boolean isSubSequence(String s1, String s2){
+    Integer pointerS1 = 0;
+    Integer pointerS2 = 0;
+    Integer leftBound = s1.length();
+    Intger rightBound = s2.length();
+
+    while (pointerS1 < leftBound && pointerS2 < rightBound) {
+        if (s1.charAt(pointerS1) == s2.charAt(pointerS2)) {
+            pointerS1++;
+        } else {
+            pointerS2++;
+        }
+    }
+    return pointerS1 == leftBound; // if the s1 incrmented over every value 
+}
