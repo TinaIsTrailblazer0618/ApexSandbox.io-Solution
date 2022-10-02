@@ -14,3 +14,5 @@ public Boolean isSubSequence(String s1, String s2){
 
     return pointerS1 == leftBound; // if the s1 incremented over every value 
 }
+
+// Input: s1 = 'abg', s2 = 'ahlrbrrc'
