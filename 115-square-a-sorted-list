@@ -1,0 +1,18 @@
+public static List<Integer> squareList(List<Integer> nums){
+    Integer left = 0;
+    Integer right = nums.size() - 1;
+    Integer highestIndex = nums.size() - 1;
+    List<Integer> sortedSquareList = new List<Integer>();
+    while (left < right) {
+        Integer leftSquare = nums[left] x nums[left];
+        Integer rightSquare = nums[right] x nums[right];
+        if (leftSquare > rightSquare) {
+            sortedSquareList[highestIndex--] = leftSquare;
+            left++;
+        } else {
+            sortedSquareList[highestIndex--] = rightSquare;
+            right--;
+        }
+    }
+    return sortedSquareList;
+}
