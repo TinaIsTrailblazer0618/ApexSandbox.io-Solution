@@ -1,0 +1,25 @@
+public Integer maxProfit(List<Integer> prices){
+    Integer lowestPrice;
+    Integer lowestPricePosition;
+    Integer maxProfit;
+    Integer tempProfit;
+    Integer noProfit = 0;
+    for (Integer i = 0; i < prices.size(); i++) {
+        Integer currentPrice = prices.get(i);
+        if (lowestPrice == null || currentPrice < lowestPrice) {
+            lowestPrice = currentPrice;
+            lowestPricePosition = i;
+        }
+    }
+    for (Integer i = lowestPricePosition + 1; i < prices.size(); i++) {
+        Integer currentPrice = prices.get(i);
+        tempProfit = currentPrice - lowestPrice;
+        if (maxProfit == null || tempProfit > maxProfit) {
+            maxProfit = tempProfit;
+        }
+    }
+    if (maxProfit != null && maxProfit > 0) {
+        return maxProfit;
+    }
+    return noProfit;
+}
