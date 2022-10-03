@@ -1,0 +1,18 @@
+public static String reverseWords(String str){
+    List<String> strList = str.split(' ');
+    List<String> reversedStrList = new List<String>();
+    for (String strObj : strList) {
+        List<Integer> charArray = new List<Integer>();
+        List<Integer> charValues = strObj.getChars();
+        // Declare and initialize the two pointers
+        Integer left = 0;
+        Integer right = charValues.size() - 1;
+        while (right >= left) {
+            charArray.add(charValues[right]);
+            right--;
+        }
+        String reversedStr = String.fromCharArray(charArray);
+        reversedStrList.add(reversedStr);
+    }
+    return String.join(reversedStrList, ' ');
+}
