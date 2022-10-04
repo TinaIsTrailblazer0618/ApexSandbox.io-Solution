@@ -6,12 +6,12 @@ public static void segregateEvenOdd(List<Integer> numbers){
         Integer rightNum = numbers[right];
         if (Math.mod(leftNum, 2) == 0) {
             left++;
-        } 
-        if (Math.mod(rightNum, 2) != 0) {
+        } else if (Math.mod(rightNum, 2) != 0) {
             right--;
+        } else {
+            Integer tempNum = numbers[left];
+            numbers[left] = rightNum;
+            numbers[right] = tempNum;
         }
-        Integer tempNum = numbers[left];
-        numbers[left] = rightNum;
-        numbers[right] = tempNum;
     }
 }
