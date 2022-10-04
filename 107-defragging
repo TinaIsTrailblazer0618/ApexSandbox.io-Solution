@@ -6,7 +6,8 @@ public void defragging(Integer[] memory)
         if (memory[left] == -1) {
             Integer emptySpace = memory.remove(left);
             memory.add(emptySpace);
+            right--;
         }
-        right--;
+        left++;
     }
 }
