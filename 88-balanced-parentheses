@@ -1,0 +1,26 @@
+public Boolean isValid(String s){
+    List<String> strList = s.split('');
+    List<String> stackList = new List<String>();
+    String opening = '';
+    String closing = '';
+    Map<String, String> charMap = new Map<String, String>(
+        '(' => ')',
+        '{' => '}',
+        '[' => ']'
+    );
+    for (String str : strList) {
+        if (this.stackList.isEmpty()) {
+            stackList.add(str);
+            continue;
+        } 
+        opening = stackList.get(stackList.size() - 1);
+        closing = charMap.get(opening);
+        if (str != closing) {
+            stackList.add(str); 
+        }
+        if (str == closing) {
+            stackList.remove(stackList.size() - 1);
+        }  
+    }
+    return stackList.isEmpty() ? true : false;
+}
