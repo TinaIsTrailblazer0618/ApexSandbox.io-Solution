@@ -5,7 +5,7 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
     while (leftPointer < rightPointer) {
         if (nums[leftPointer] + nums[rightPointer] > target) {
             rightPointer--;
-        } else if (nums[leftPointer] + [rightPointer] < target) {
+        } else if (nums[leftPointer] + nums[rightPointer] < target) {
             leftPointer++;
         } else {
             return new List<Integer>{leftPointer, rightPointer};
