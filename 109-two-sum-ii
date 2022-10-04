@@ -1,0 +1,15 @@
+public List<Integer> twoSum(List<Integer> nums, Integer target){
+    //code here
+    Integer leftPointer = 0;
+    Integer rightPointer = nums.size() - 1;
+    while (leftPointer < rightPointer) {
+        if (nums[leftPointer] + nums[rightPointer] > target) {
+            rightPointer--;
+        } else if (nums[leftPointer] + [rightPointer] < target) {
+            leftPointer++;
+        } else {
+            return new List<Integer>{leftPointer, rightPointer};
+        }
+    }
+    return null;
+}
