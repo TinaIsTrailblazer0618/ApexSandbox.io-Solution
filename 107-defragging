@@ -7,5 +7,6 @@ public void defragging(Integer[] memory)
             Integer emptySpace = memory.remove(left);
             memory.add(emptySpace);
         }
+        right--;
     }
 }
