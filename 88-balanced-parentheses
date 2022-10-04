@@ -3,13 +3,13 @@ public Boolean isValid(String s){
     List<String> stackList = new List<String>();
     String opening = '';
     String closing = '';
-    Map<String, String> charMap = new Map<String, String>(
+    Map<String, String> charMap = new Map<String, String>{
         '(' => ')',
         '{' => '}',
         '[' => ']'
-    );
+    };
     for (String str : strList) {
-        if (this.stackList.isEmpty()) {
+        if (stackList.isEmpty()) {
             stackList.add(str);
             continue;
         } 
