@@ -14,5 +14,4 @@ public static void segregateEvenOdd(List<Integer> numbers){
         numbers[left] = rightNum;
         numbers[right] = tempNum;
     }
-    return numbers;
 }
