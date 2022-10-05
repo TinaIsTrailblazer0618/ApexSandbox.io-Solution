@@ -11,18 +11,21 @@ public static String processString(String str) {
     String backspace = '#';
     String currentStr = '';
     List<String> splitStrings = str.split('');
-    for (Integer i = 0; i < splitStrings.size(); i++) {
-        currentStr = splitStrings.get(i);
-        if (currentStr == backspace && i == 0) {
-            splitStrings.remove(i);
-            i--;
+    Integer left = 0;
+    Integer right = splitStrings.size();
+    while (left < right) {
+        currentStr = splitStrings[left];
+        if (currentStr == backspace && left == 0) {
+            splitStrings.remove(left);
+            left -= 1;
+            right -= 1;
+        } else if (currentStr == backspace && left > 0) {
+            splitStrings.remove(left);
+            splitStrings.remove(left - 1);
+            left -= 2;
+            right -= 2;
         }
-        if (currentStr == backspace) {
-            splitStrings.remove(i);
-            i--;
-            splitStrings.remove(i - 1);
-            i--;
-        }
+        left += 1;
     }
     return String.join(splitStrings, '');
 }
