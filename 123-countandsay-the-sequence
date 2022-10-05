@@ -1,6 +1,6 @@
 public string countAndSay(integer N) {
     String str = '';
-    return sub(str, N-1);
+    return sub(str, N - 1);
 }
 
 public String sub(String str, Integer ) {
@@ -9,25 +9,25 @@ public String sub(String str, Integer ) {
         return str;
     }
     // count and say functionality
-        Integer charValue;
-        Integer count = 0;
-        String result = '';
-        // String str = '1';
-        for (Integer i = 0; i < str.length(); i++) {
-            Integer temp = str.charAt(i);
-            if (charValue == null || temp == charValue) {
-                count += 1;
-                charValue = temp;
-            } else {
-                result += String.valueOf(count);
-                result += String.fromCharArray(new List<Integer>{ charValue });
-                count = 1;
-                charValue = temp;
-            }
-            if (i == str.length() - 1) {
-                result += String.valueOf(count);
-                result += String.fromCharArray(new List<Integer>{ charValue });
-            }
-            str = result;
+    Integer charValue;
+    Integer count = 0;
+    String result = '';
+    // String str = '1';
+    for (Integer i = 0; i < str.length(); i++) {
+        Integer temp = str.charAt(i);
+        if (charValue == null || temp == charValue) {
+            count += 1;
+            charValue = temp;
+        } else {
+            result += String.valueOf(count);
+            result += String.fromCharArray(new List<Integer>{ charValue });
+            count = 1;
+            charValue = temp;
         }
+        if (i == str.length() - 1) {
+            result += String.valueOf(count);
+            result += String.fromCharArray(new List<Integer>{ charValue });
+        }
+    }
+    return result;
 }
