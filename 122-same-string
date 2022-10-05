@@ -1,0 +1,25 @@
+public static Boolean sameString(String str1, String str2){
+    String processedStr1 = processString(str1);
+    String processedStr2 = processString(str2);
+    if (processedStr1 != processedStr2) {
+        return false;
+    }
+    return true;
+}
+
+public static String processString(String str) {
+    String backspace = '#';
+    String currentStr = '';
+    List<String> splitStrings = str.split('');
+    for (Integer i = 0; i < splitStrings.size(); i++) {
+        currentStr = splitStrings.get(i);
+        if (currentStr == backspace && i == 0) {
+            splitStrings.remove(i); 
+        }
+        if (currentStr == backspace) {
+            splitStrings.remove(i);
+            splitStrings.remove(i - 1);
+        }
+    }
+    return String.join(splitStrings, '');
+}
