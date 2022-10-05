@@ -2,9 +2,6 @@ public string countAndSay(integer N) {
     if (n == 1) {
         return '1';
     }
-    if (n > 1) {
-        return sub(String str);
-    }
     return countAndSay(n - 1);
 }
 
