@@ -1,8 +1,9 @@
 public string countAndSay(integer N) {
-    return sub(str,n-1);
+    String str = '';
+    return sub(str, N-1);
 }
 
-public String sub(String str, Integer n) {
+public String sub(String str, Integer ) {
     if (n == 1) {
         str = '1';
         return str;
