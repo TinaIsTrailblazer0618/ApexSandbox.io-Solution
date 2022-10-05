@@ -14,11 +14,14 @@ public static String processString(String str) {
     for (Integer i = 0; i < splitStrings.size(); i++) {
         currentStr = splitStrings.get(i);
         if (currentStr == backspace && i == 0) {
-            splitStrings.remove(i); 
+            splitStrings.remove(i);
+            i--;
         }
         if (currentStr == backspace) {
             splitStrings.remove(i);
+            i--;
             splitStrings.remove(i - 1);
+            i--;
         }
     }
     return String.join(splitStrings, '');
