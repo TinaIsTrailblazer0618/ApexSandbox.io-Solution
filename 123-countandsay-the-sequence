@@ -4,10 +4,6 @@ public string countAndSay(integer N) {
         str = '1';
         return str;
     }
-    return sub(str, N - 1);
-}
-
-public String sub(String str, Integer n) {
     // count and say functionality
     Integer charValue;
     Integer count = 0;
@@ -32,3 +28,29 @@ public String sub(String str, Integer n) {
     }
     return str;
 }
+
+// public String sub(String str, Integer n) {
+//     // count and say functionality
+//     Integer charValue;
+//     Integer count = 0;
+//     String result = '';
+//     // String str = '1';
+//     for (Integer i = 0; i < str.length(); i++) {
+//         Integer temp = str.charAt(i);
+//         if (charValue == null || temp == charValue) {
+//             count += 1;
+//             charValue = temp;
+//         } else {
+//             result += String.valueOf(count);
+//             result += String.fromCharArray(new List<Integer>{ charValue });
+//             count = 1;
+//             charValue = temp;
+//         }
+//         if (i == str.length() - 1) {
+//             result += String.valueOf(count);
+//             result += String.fromCharArray(new List<Integer>{ charValue });
+//         }
+//         str = result;
+//     }
+//     return str;
+// }
