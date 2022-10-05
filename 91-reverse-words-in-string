@@ -1,12 +1,18 @@
 public static String reverseWords(String str){
-    List<Integer> charArray = str.getChars();
-    // Declare and initialize the two pointers
-    Integer left = 0;
-    Integer right = charArray.size() - 1;
-    while (left < right) {
-        Integer temp = charArray[left]; // anytime you swap in Apex
-        charArray[left++] = charArray[right];
-        charArray[right--] = temp;
+    List<String> strList = str.split(' ');
+    List<String> reversedStrList = new List<String>();
+    for (String strObj : strList) {
+        List<Integer> charArray = strObj.getChars();
+        // Declare and initialize the two pointers
+        Integer left = 0;
+        Integer right = charArray.size() - 1;
+        while (left < right) {
+            Integer temp = charArray[left]; // anytime you swap in Apex
+            charArray[left++] = charArray[right];
+            charArray[right--] = temp;
+        }
+        String reversedStr = String.fromCharArray(charArray);
+        reversedStrList.add(reversedStr);
     }
-    return String.fromCharArray(charArray);
+    return String.join(reversedStrList, ' ');
 }
