@@ -28,6 +28,7 @@ public String sub(String str, Integer n) {
             result += String.valueOf(count);
             result += String.fromCharArray(new List<Integer>{ charValue });
         }
+        str = result;
     }
-    return result;
+    return str;
 }
