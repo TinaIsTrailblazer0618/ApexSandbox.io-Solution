@@ -7,10 +7,8 @@ public String reverseWordsInASentence(String sentence){
     Integer right = strList.size() - 1;
     while (left < right) {
         String tempWord = strList.get(left);
-        strList[left] = strList[right];
-        strList[right] = tempWord;
-        left ++;
-        right --;
+        strList[left++] = strList[right];
+        strList[right--] = tempWord;
     }
     return String.join(strList, ' ');
 }
