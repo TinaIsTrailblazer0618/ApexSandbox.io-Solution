@@ -1,0 +1,13 @@
+public String reverseWordsInASentence(String sentence){
+    List<String> strList = sentence.split(' ');
+    Integer left = 0;
+    Integer right = sentence.size() - 1;
+    while (left < right) {
+        String tempWord = strList.get(left);
+        strList[left] = strList[right];
+        strList[right] = tempWord;
+        left ++;
+        right --;
+    }
+    return String.join(strList, ' ');
+}
