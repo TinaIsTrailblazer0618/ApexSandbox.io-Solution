@@ -5,7 +5,7 @@ public List<Integer> fibonacciSeries(Integer n) {
         return fibonacciList;
     }
     if (n == 2) {
-        fibonacciList[1] = 1;
+        fibonacciList.add(1);
         return fibonacciList;
     }
     // n > 2
