@@ -12,6 +12,11 @@ public Integer maxConsecutiveOnes(Integer[] numbers) {
             }
             countOfOne = 0;
         }
+        if (i == rightBound) {
+            if (countOfOne > currentMax) {
+                currentMax = countOfOne;
+            }
+        }
     }
     return currentMax;
 }
