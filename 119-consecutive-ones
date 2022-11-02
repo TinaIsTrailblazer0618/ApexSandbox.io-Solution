@@ -7,15 +7,10 @@ public Integer maxConsecutiveOnes(Integer[] numbers) {
             countOfOne++;
         }
         if (numbers[i] == 0) {
-            if (countOfOne > currentMax) {
-                currentMax = countOfOne;
-            }
             countOfOne = 0;
         }
-        if (i == rightBound) {
-            if (countOfOne > currentMax) {
-                currentMax = countOfOne;
-            }
+        if (countOfOne > currentMax) {
+            currentMax = countOfOne;
         }
     }
     return currentMax;
