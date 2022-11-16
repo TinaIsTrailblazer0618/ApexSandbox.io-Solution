@@ -9,8 +9,8 @@ public Boolean companionPlants(List<String> plants) {
     );
 
     for (Integer i = 0; i < plants.size(); i++) {
-        Integer plant1 = plants[i];
-        Integer plant2 = plants[i + 1];
+        String plant1 = plants[i];
+        String plant2 = plants[i + 1];
         if (companionPlantMap.containskey(plant1)) {
             if (plant2 == plants.get(plant1)) {
                 isCompanion = true;
