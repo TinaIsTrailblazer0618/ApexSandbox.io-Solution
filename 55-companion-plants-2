@@ -12,7 +12,8 @@ public Boolean companionPlants(List<String> plants) {
         return isCompanion;
     }
 
-    for (Integer i = 0; i < plants.size(); i++) {
+    Integer rightPointer = plants.size() - 1;
+    for (Integer i = 0; i < plants.size() - 1; i++) {
         String plant1 = plants[i];
         String plant2 = plants[i + 1];
         if (companionPlantMap.containsKey(plant1) && plant2 == companionPlantMap.get(plant1)) {
