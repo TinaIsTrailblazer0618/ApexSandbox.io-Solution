@@ -11,9 +11,9 @@ public Boolean companionPlants(List<String> plants) {
     for (Integer i = 0; i < plants.size(); i++) {
         String plant1 = plants[i];
         String plant2 = plants[i + 1];
-        if (companionPlantMap.containskey(plant1) && plant2 == companionPlantMap.get(plant1)) {
+        if (companionPlantMap.containsKey(plant1) && plant2 == companionPlantMap.get(plant1)) {
             isCompanion = true;
-        } if else (companionPlantMap.containskey(plant2) && plant1 == companionPlantMap.get(plant2)) {
+        } else if (companionPlantMap.containsKey(plant2) && plant1 == companionPlantMap.get(plant2)) {
             isCompanion = true;
         } else {
             isCompanion = false;
