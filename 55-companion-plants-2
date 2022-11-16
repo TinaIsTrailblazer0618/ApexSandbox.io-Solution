@@ -1,0 +1,35 @@
+public Boolean companionPlants(List<String> plants) {
+    //code here
+    Boolean isCompanion = false;
+    Map<String, String> companionPlantMap = new Map<String, String>(
+        cucumbers => lettuce,
+        onions => lettuce,
+        carrots => onions,
+        tomatoes => onions 
+    )
+
+    for (Integer i = 0; i < plants.size(); i++) {
+        Integer plant1 = plants[i];
+        Integer plant2 = plants[i + 1];
+        if (companionPlantMap.containskey(plant1)) {
+            if (plant2 == plants.get(plant1)) {
+                isCompanion = true;
+            } else {
+                isCompanion = false;
+                break;
+            }
+        } if else (companionPlantMap.containskey(plant2)) {
+            if (plant1 == plants.get(plant2)) {
+                isCompanion = true;
+            } else {
+                isCompanion = false;
+                break;
+            }
+        } else {
+            isCompanion = false;
+            break;
+        }
+    }
+    
+    return isCompanion;
+}
