@@ -3,11 +3,11 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
     Integer leftBound = 0;
     Integer rightBound = nums.size() - 1;
     while (leftBound < rightBound) {
-        Integer result = target - nums[leftBound];
-        if (nums[rightBound] > result) {
+        Integer result = nums[rightBound] + nums[leftBound];
+        if (result == target) {
+            return new List<Integer>{ leftBound, rightBound };
+        } else if (result > target) {
             rightBound--;
-        } else if (nums[rightBound] == result) {
-            return new List<Integer>{ leftBound, rightBound};
         } else {
             leftBound++;
         }
