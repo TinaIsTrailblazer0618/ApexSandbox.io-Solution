@@ -1,0 +1,9 @@
+public Id insertStudent(String name, String email) {
+    // code here
+    apxio__Student__c student = new apxio__Student__c(
+        student.Name = 'Billie Eillish',
+        student.apxio__Email__c = 'test@apexsandbox.com'
+    );
+    insert student;
+    return student.Id;
+}
