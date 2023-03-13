@@ -3,10 +3,10 @@ public Id insertCourse(String name, String details, Integer credits) {
     apxio__Course__c course = new apxio__Course__c(
         Name = name,
         apxio__Course_Details__c = details,
-        apxio__Credits__c = credits == 1 ? 1 :
-            credits == 2 ? 2 :
-            credits == 3 ? 3 :
-            credits == 4 ? 4 : null 
+        apxio__Credits__c = String.valueOf(credits) == 1 ? 1 :
+            String.valueOf(credits) == 2 ? 2 :
+            String.valueOf(credits) == 3 ? 3 :
+            String.valueOf(credits) == 4 ? 4 : null 
     );
     insert course;
     return course.Id;
