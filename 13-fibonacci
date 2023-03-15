@@ -1,11 +1,11 @@
 public Integer fibonacci(Integer n) {
     if (n == 0) {
-        return null;
+        return;
     }
     if (n == 1) {
         return 1;
     }
-    
+
     Integer oneBack;
     Integer twoBack;
     oneBack = fibonacci(n - 1);
