@@ -1,15 +1,14 @@
 public Integer fibonacci(Integer n) {
+    Integer oneBack;
+    Integer twoBack;
+    
     if (n == 0) {
         return 0;
     }
     if (n == 1) {
         return 1;
     }
-
-    Integer oneBack;
-    Integer twoBack;
     oneBack = fibonacci(n - 1);
     twoBack = fibonacci(n - 2);
-
     return oneBack + twoBack;
 }
