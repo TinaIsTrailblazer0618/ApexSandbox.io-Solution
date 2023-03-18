@@ -16,8 +16,8 @@ public List<String> commonChars(List<String> strs){
 
     for (String currentStr : strs) {
         List<Integer> charFrequencies = new Integer[26];
-        for (Integer int : currentStr.getChars()) {
-            charFrequencies[int - a]++;
+        for (Integer char : currentStr.getChars()) {
+            charFrequencies[char - a]++;
         }
         for (Integer i = 0; i < 26; i++) {
             minFrequencies = math.min(minFrequencies[i], charFrequencies[i]);
