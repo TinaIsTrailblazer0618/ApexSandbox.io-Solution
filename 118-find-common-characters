@@ -16,8 +16,10 @@ public List<String> commonChars(List<String> strs){
 
     for (String currentStr : strs) {
         List<Integer> charFrequencies = new Integer[26];
+        for (Integer i = 0; i < charFrequencies.size(); i++) {
+            charFrequencies[i] = 0;
+        }
         for (Integer c : currentStr.getChars()) {
-            charFrequencies[c - a] = 0;
             charFrequencies[c - a]++;
         }
         for (Integer i = 0; i < 26; i++) {
