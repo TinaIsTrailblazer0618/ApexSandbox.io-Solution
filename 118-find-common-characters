@@ -20,7 +20,7 @@ public List<String> commonChars(List<String> strs){
             charFrequencies[c - a]++;
         }
         for (Integer i = 0; i < 26; i++) {
-            minFrequencies = math.min(minFrequencies[i], charFrequencies[i]);
+            minFrequencies[i] = math.min(minFrequencies[i], charFrequencies[i]);
         }
     }
 
