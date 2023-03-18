@@ -6,7 +6,7 @@ public List<String> commonChars(List<String> strs){
     // 5. loop through each string getChars and update charFrequencies
     // 6. compare charFrequencies with minFrequencies using math.min();
     // 7. loop through minFrequencies and add chars to commonChars
-    Integer maxValue = 2,147,483,647;
+    Integer maxValue = 2147483647;
     Integer a = 97;
     List<String> commonChars = new List<String>();
     List<Integer> minFrequencies = new Integer[26];
