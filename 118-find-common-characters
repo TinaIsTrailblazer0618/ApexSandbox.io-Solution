@@ -27,7 +27,7 @@ public List<String> commonChars(List<String> strs){
     for (Integer i = 0; i < 26; i++) {
         while (minFrequencies[i] > 0) {
             List<Integer> charArray = new List<Integer>{ i + a };
-            commonChars.add(charArray);
+            commonChars.add(String.fromCharArray(charArray));
             minFrequencies[i]--;
         }
     }
