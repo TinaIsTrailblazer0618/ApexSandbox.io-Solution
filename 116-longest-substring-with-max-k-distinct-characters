@@ -1,7 +1,7 @@
 public static Integer longestDistinctSubstring(String str, Integer k){ 
     Integer left = 0;
     Integer answer = 0;
-    Map<Integer> characters = new Map<Integer>();
+    Map<Integer, Integer> characters = new Map<Integer, Integer>();
 
     for (Integer right = 0; right < str.length(); right++) {
         if (!characters.containsKey(str.charAt(right))) {
