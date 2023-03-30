@@ -4,7 +4,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
     Map<Integer, Integer> characters = new Map<Integer, Integer>();
 
     for (Integer right = 0; right < str.length(); right++) {
-        if (!characters.containsKey(str.charAt(right))) {
+        if (characters.containsKey(str.charAt(right))) {
             characters.put(
                 str.charAt(right), 
                 characters.get(str.charAt(right) + 1)
