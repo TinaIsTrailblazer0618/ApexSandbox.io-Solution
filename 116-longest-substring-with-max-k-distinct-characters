@@ -12,7 +12,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
             characters.put(str.charAt(right), 1);
         }
 
-        while (characters.keySet() > k) {
+        while (characters.size() > k) {
             if (characters.containsKey(str.charAt(left))) {
                 characters.put(
                     str.charAt(left),
