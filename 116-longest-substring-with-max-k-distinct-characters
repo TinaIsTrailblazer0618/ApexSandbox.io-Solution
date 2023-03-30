@@ -7,7 +7,8 @@ public static Integer longestDistinctSubstring(String str, Integer k){
         if (!characters.containsKey(str.charAt(right))) {
             characters.put(
                 str.charAt(right), 
-                characters.get(str.charAt(right) + 1);
+                characters.get(str.charAt(right) + 1)
+            );
         } else {
             characters.put(str.charAt(right), 1);
         }
@@ -16,7 +17,8 @@ public static Integer longestDistinctSubstring(String str, Integer k){
             if (characters.containsKey(str.charAt(left))) {
                 characters.put(
                     str.charAt(left),
-                    characters.get(str.charAt(left) - 1);
+                    characters.get(str.charAt(left) - 1)
+                );
             }
             if (characters.get(str.charAt(left)) == 0) {
                 characters.remove(charAt(left));
