@@ -21,7 +21,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
                 );
             }
             if (characters.get(str.charAt(left)) == 0) {
-                characters.remove(charAt(left));
+                characters.remove(str.charAt(left));
             }
             left++;
         }
