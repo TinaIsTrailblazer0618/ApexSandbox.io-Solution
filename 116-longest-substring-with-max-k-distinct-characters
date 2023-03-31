@@ -4,24 +4,21 @@ public static Integer longestDistinctSubstring(String str, Integer k){
     Map<Integer, Integer> characters = new Map<Integer, Integer>();
 
     for (Integer right = 0; right < str.length(); right++) {
-        if (characters.containsKey(str.charAt(right))) {
-            characters.put(
-                str.charAt(right), 
-                characters.get(str.charAt(right)) + 1
-            );
+        Integer c = str.charAt(right);
+        if (characters.containsKey(c)) {
+            characters.put(c, characters.get(c) + 1);
         } else {
-            characters.put(str.charAt(right), 1);
+            characters.put(c, 1);
         }
 
         while (characters.size() > k) {
-            if (characters.containsKey(str.charAt(left))) {
+            Integer  = str.charAt(left);
                 characters.put(
-                    str.charAt(left),
-                    characters.get(str.charAt(left)) - 1
+                    cLeft,
+                    characters.get(cLeft) - 1
                 );
-            }
-            if (characters.get(str.charAt(left)) == 0) {
-                characters.remove(str.charAt(left));
+            if (characters.get(cLeft) == 0) {
+                characters.remove(cLeft);
             }
             left++;
         }
