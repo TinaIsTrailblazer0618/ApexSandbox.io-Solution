@@ -9,11 +9,11 @@ public static Integer longestDistinctSubstring(String str, Integer k){
     Map<Integer, Integer> dic = new Map<Integer, Integer>();
 
     for (Integer right = 0; right < str.length(); right++) {
-        Integer char = str.charAt(right);
-        if (dic.containsKey(char)) {
-            dic.put(char, dic.get(char) + 1);
+        Integer charToAdd = str.charAt(right);
+        if (dic.containsKey(charToAdd)) {
+            dic.put(charToAdd, dic.get(charToAdd) + 1);
         } else {
-            dic.put(char, 1);
+            dic.put(charToAdd, 1);
         }
 
         while (dic.size() > k) {
