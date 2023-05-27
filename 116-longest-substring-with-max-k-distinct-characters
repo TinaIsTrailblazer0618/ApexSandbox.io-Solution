@@ -17,17 +17,12 @@ public static Integer longestDistinctSubstring(String str, Integer k){
 
         while (dic.size() > k) {
             Integer charToRemove = str.charAt(left);
-            if (dic.containsKey(charToRemove)) {
-                if (dic.get(charToRemove) == 0) {
+            dic.put(charToRemove, dic.get(charToRemove) - 1);
+            if (dic.get(charToRemove) == 0) {
                 dic.remove(charToRemove);
-                } else {
-                dic.put(charToRemove, dic.get(charToRemove) - 1);
-                }
             }
-
             left++;
         }
-
         answer = math.max(answer, right - left + 1);
     }
 
