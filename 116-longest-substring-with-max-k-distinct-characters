@@ -18,11 +18,13 @@ public static Integer longestDistinctSubstring(String str, Integer k){
         while (dic.size() > k) {
             Integer charToRemove = str.charAt(left);
             if (dic.containsKey(charToRemove)) {
-                dic.put(charToRemove, dic.get(charToRemove) - 1);
-            }
-            if (dic.get(charToRemove) == 0) {
+                if (dic.get(charToRemove) == 0) {
                 dic.remove(charToRemove);
+                } else {
+                dic.put(charToRemove, dic.get(charToRemove) - 1);
+                }
             }
+
             left++;
         }
 
