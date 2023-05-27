@@ -1,29 +1,32 @@
 public static Integer longestDistinctSubstring(String str, Integer k){ 
+    //solution here
+    if (k > str.length()) {
+        return str.length();
+    }
+
     Integer left = 0;
     Integer answer = 0;
-    Map<Integer, Integer> characters = new Map<Integer, Integer>();
+    Map<Integer, Integer> dic = new Map<Integer, Integer>();
 
     for (Integer right = 0; right < str.length(); right++) {
-        Integer c = str.charAt(right);
-        if (characters.containsKey(c)) {
-            characters.put(c, characters.get(c) + 1);
+        Integer char = str.charAt(right);
+        if (dic.containsKey(char)) {
+            dic.put(char, dic.get(char) + 1);
         } else {
-            characters.put(c, 1);
+            dic.put(char, 1);
         }
 
-        while (characters.size() > k) {
-            Integer cLeft = str.charAt(left);
-            characters.put(
-                cLeft,
-                characters.get(cLeft) - 1
-            );
-            if (characters.get(cLeft) == 0) {
-                characters.remove(cLeft);
+        while (dic.size() > k) {
+            Integer charToRemove = str.charAt(left);
+            if (dic.get(charToRemove) == 0) {
+                dic.remove(charToRemove);
+            } else {
+                dic.put(charToRemove, dic.get(charToRemove) - 1);
             }
             left++;
         }
-        
-        answer = Math.max(answer, right - left + 1);
+
+        answer = math.max(answer, right - left + 1);
     }
 
     return answer;
