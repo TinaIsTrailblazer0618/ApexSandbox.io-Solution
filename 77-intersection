@@ -1,4 +1,7 @@
 public Set<Integer> setIntersection(Set<Integer> set1, Set<Integer> set2) {
-    Boolean result = set1.retainAll(set2);
-    return set1;
+    //code here
+    Set<Integer> result = new Set<Integer>(set1);
+    result.retainAll(set2);
+
+    return result;
 }
