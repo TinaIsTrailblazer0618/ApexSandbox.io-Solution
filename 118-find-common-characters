@@ -2,7 +2,7 @@ public List<String> commonChars(List<String> strs){
     List<String> commonChars = new List<String>();
     List<Integer> minFrequencies = new Integer[26];
     Integer maxValue = 2147483647;
-    Integer a = '97';
+    Integer a = 97';
 
     for (Integer i = 0; i < 26; i++) {
         minFrequencies[i] = maxValue;
