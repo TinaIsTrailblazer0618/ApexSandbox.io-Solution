@@ -1,6 +1,6 @@
 public Map<String, Account> phoneToAccount(List<Account> accounts) {
     //code here
-    Map<String, Account> phoneToAccountMap = new Map<String, String>();
+    Map<String, Account> phoneToAccountMap = new Map<String, Account>();
     for (Account acct : accounts) {
         if (acct.Phone == null) {
             continue;
