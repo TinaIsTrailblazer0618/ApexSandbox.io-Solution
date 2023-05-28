@@ -10,6 +10,9 @@ public List<String> commonChars(List<String> strs){
 
     for (String str : strs) {
         List<Integer> frequencies = new Integer[26];
+        for (Integer i = 0; i < 26; i++) {
+            frequencies[i] = 0;
+        }
         for (Integer character : str.getChars()) {
             frequencies[character - a]++;
         }
