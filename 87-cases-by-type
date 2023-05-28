@@ -8,7 +8,7 @@ public Map<String, List<Case>> casesByType(List<Case> cases) {
         }
 
         if (typeMap.containsKey(caseType)) {
-            typeMap.put(caseType, typeMap.get(caseType).add(caseObj));
+            typeMap.get(caseType).add(caseObj);
         } else {
             typeMap.put(caseType, new List<Case>{ caseObj });
         }
