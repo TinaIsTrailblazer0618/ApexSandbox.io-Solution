@@ -1,36 +1,28 @@
 public List<String> commonChars(List<String> strs){
-    // 1: create commonChars list
-    // 2: create minFrequencies list [26] and fill it with large integers
-    // 3: loop through each string in strs
-    // 4. for each string, create a new list charFrequencies
-    // 5. loop through each string getChars and update charFrequencies
-    // 6. compare charFrequencies with minFrequencies using math.min();
-    // 7. loop through minFrequencies and add chars to commonChars
-    Integer maxValue = 2147483647;
-    Integer a = 97;
     List<String> commonChars = new List<String>();
     List<Integer> minFrequencies = new Integer[26];
-    for (Integer i = 0; i < minFrequencies.size(); i++) {
+    Integer maxValue = 2,147,483,647;
+    Integer a = '97';
+
+    for (Integer i = 0; i < 26; i++) {
         minFrequencies[i] = maxValue;
     }
 
-    for (String currentStr : strs) {
-        List<Integer> charFrequencies = new Integer[26];
-        for (Integer i = 0; i < charFrequencies.size(); i++) {
-            charFrequencies[i] = 0;
-        }
-        for (Integer c : currentStr.getChars()) {
-            charFrequencies[c - a]++;
+    for (String str : strs) {
+        List<Integer> frequencies = new Integer[26];
+        for (Integer character : str.getChars()) {
+            frequencies[character - a]++;
         }
         for (Integer i = 0; i < 26; i++) {
-            minFrequencies[i] = math.min(minFrequencies[i], charFrequencies[i]);
+            minFrequencies[i] = math.min(minFrequencies[i], frequencies[i]);
         }
     }
 
     for (Integer i = 0; i < 26; i++) {
         while (minFrequencies[i] > 0) {
-            List<Integer> charArray = new List<Integer>{ i + a };
-            commonChars.add(String.fromCharArray(charArray));
+            List<Integer> charArr = new List<Integer>{ a + i };
+            String strToAdd = String.fromCharArray(charArr);
+            commonChars.add(strToAdd);
             minFrequencies[i]--;
         }
     }
