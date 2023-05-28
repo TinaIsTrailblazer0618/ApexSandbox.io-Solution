@@ -5,7 +5,7 @@ public Map<String, String> phonebook(List<Contact> contacts) {
         String fullName = contactObj.FirstName + ' ' + contactObj.LastName;
         String phone = contactObj.Phone;
         if (phone != null) {
-            phoneBook.push(fullName, phone);
+            phoneBook.put(fullName, phone);
         }
     }
 
