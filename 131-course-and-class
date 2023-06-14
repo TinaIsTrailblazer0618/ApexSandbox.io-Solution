@@ -7,6 +7,7 @@ public void createCourseAndClass(String name, String description) {
     insert course;
 
     apxio__Class__c child = new apxio__Class__c();
+    child.apxio__Course__c = course.Id;
     child.Name = name;
     child.apxio__Description__c = description.abbreviate(maxSize);
     insert child;
