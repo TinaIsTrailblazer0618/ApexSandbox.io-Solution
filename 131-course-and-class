@@ -6,13 +6,14 @@ public void createCourseAndClass(String name, String description) {
     course.apxio__Course_Details__c = description;
     insert course;
 
+    Boolean isNotNull = description != null;
+    Boolean needToTruncate = description?.length() > maxSize;
+
     apxio__Class__c child = new apxio__Class__c();
     child.apxio__Course__c = course.Id;
     child.Name = name;
     child.apxio__Description__c = 
-        description != null ? 
-        description.length() > 255 ? 
-        description.substring(0, maxSize) : description : null;
+        isNotNull ? needToTruncate ? description.substring(0, maxSize) : null; 
 
     insert child;
 }
