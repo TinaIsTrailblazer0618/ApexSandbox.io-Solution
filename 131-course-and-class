@@ -10,7 +10,7 @@ public void createCourseAndClass(String name, String description) {
     child.apxio__Course__c = course.Id;
     child.Name = name;
     child.apxio__Description__c = 
-        descrption != null ? 
+        description != null ? 
         description.length() > 255 ? 
         description.substring(0, maxSize) : description : null;
 
