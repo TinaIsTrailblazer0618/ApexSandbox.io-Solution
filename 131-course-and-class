@@ -9,6 +9,6 @@ public void createCourseAndClass(String name, String description) {
     apxio__Class__c child = new apxio__Class__c();
     child.apxio__Course__c = course.Id;
     child.Name = name;
-    child.apxio__Description__c = description.substring(0, 255);
+    child.apxio__Description__c = description?.substring(0, maxSize);
     insert child;
 }
