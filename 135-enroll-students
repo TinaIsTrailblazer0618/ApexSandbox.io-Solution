@@ -4,7 +4,11 @@ public void enrollStudents(List<String> emails, String className) {
         SELECT Id FROM apxio__Student__c
         WHERE apxio__Email__c IN :emails];
 
-    if (students.isEmpty()) {
+    List<apxio__Class__c> classes = [
+        SELECT Id FROM apxio__Class__c
+        WHERE Name = :className];
+
+    if (students.isEmpty() || classes.isEmpty()) {
         return;
     }
 
@@ -13,7 +17,7 @@ public void enrollStudents(List<String> emails, String className) {
     for (apxio__Student__c student : students) {
         apxio__Class_Enrollment__c enrollment = new apxio__Class_Enrollment__c();
         enrollment.apxio__Student__c = student.Id;
-        enrollment.apxio__Offered_Class__c = className;
+        enrollment.apxio__Offered_Class__c = classes[0].Id;
         enrollmentsToCreate.add(enrollment);
     }
 
